@@ -71,7 +71,7 @@ First let's test if the missingess of the CUSTOMERS.AFFECTED value depends on th
 
 In this chart, the distribution between the null and non-null values seem to be fairly similar. We can further investigate by conducting a permuation test to check if this difference in distribution was purely due to chance or if the CLIMATE.CATEGORY has a correlation with the missingnes of CUSTOMERS.AFFECTED.
 
-**Results:**
+**Permutation Test Results:**
 
 Observed TVD = 0.03
 P-value = 0.592
@@ -88,7 +88,7 @@ Now, let's test if the missingess of the CUSTOMERS.AFFECTED value depends on the
 
 There seems to be a significant difference in values in the null and non-null distributions of the CUSTOMERS.AFFECTED values. We can further investigate by conducting a permuation test to check if this difference in distribution was purely due to chance or if the CLIMATE.CATEGORY has a correlation with the missingnes of U.S._STATES.
 
-**Results:**
+**Permutation Test Results:**
 
 Observed TVD = 0.37
 P-value = 0.0
