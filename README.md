@@ -213,20 +213,40 @@ Note: We choose the median as our test statistic here because the overall durati
 #### Outage Cause
 Firstly, we want to compare the median outage duration of each class in the CAUSE.CATEGORY column to the overall population median.
 Below is a dataframe that summarizes the results of hypothesis tests done to compare individual median categorical durations to the overall median duration.
-[INSERT RESULT_DF DATAFRAME]
+
+|    | Category                      | H0     | H1     |   Observed Median |   P-value | Reject   |
+|---:|:------------------------------|:-------|:-------|------------------:|----------:|:---------|
+|  0 | equipment failure             | m = m0 | m < m1 |             221   |    0.0088 | True     |
+|  1 | fuel supply emergency         | m = m0 | m > m1 |            3960   |    0      | True     |
+|  2 | intentional attack            | m = m0 | m < m1 |              56   |    0      | True     |
+|  3 | islanding                     | m = m0 | m < m1 |              77.5 |    0      | True     |
+|  4 | public appeal                 | m = m0 | m < m1 |             455   |    0.2416 | False    |
+|  5 | severe weather                | m = m0 | m > m1 |            2460   |    0      | True     |
+|  6 | system operability disruption | m = m0 | m < m1 |             215   |    0.0001 | True     |
 
 Here is a bar chart comparing the medians of each of the groups:
-[PLOT HERE]
+<iframe src="Plots/hypplot0.html" width=800 height=600 frameBorder=0></iframe>
 
 Analysis: Based on our hypothesis tests, it seems likely that the median duration of outages is less than the overall median duration for outages caused by equipment failures, intentional attacks, islanding, or system operability disruptions. Furthermore, the median duration is likely greater than the overall median duration for outages caused by fuel supply emergencies or severe weather. It is likely that outages caused by severe weather take longer to resolve because the restoration team is less in control of factors influenced majorly by nature, like weather.
 
 #### Day of the Week
 We can also compare the median outage duration of each class in the DAY_OF_WEEK column to the overall population median.
 Below is a dataframe that summarizes the results of hypothesis tests done to compare individual median categorical durations to the overall median duration.
-[INSERT RESULT_DF DATAFRAME]
+
+
+|    |   Category | H0     | H1     |   Observed Median |   P-value | Reject   | Day_of_the_Week   |
+|---:|-----------:|:-------|:-------|------------------:|----------:|:---------|:------------------|
+|  0 |          0 | m = m0 | m < m1 |             430   |    0.0362 | True     | Monday            |
+|  1 |          1 | m = m0 | m < m1 |             420   |    0.0274 | True     | Tuesday           |
+|  2 |          2 | m = m0 | m < m1 |             510   |    0.1529 | False    | Wednesday         |
+|  3 |          3 | m = m0 | m < m1 |             550   |    0.2022 | False    | Thursday          |
+|  4 |          4 | m = m0 | m > m1 |             763.5 |    0.3945 | False    | Friday            |
+|  5 |          5 | m = m0 | m > m1 |            1847.5 |    0      | True     | Saturday          |
+|  6 |          6 | m = m0 | m > m1 |            1080   |    0.0594 | False    | Sunday            |
 
 Here is a bar chart comparing the medians of each of the groups:
-[PLOT HERE]
+
+<iframe src="Plots/hypplot1.html" width=800 height=600 frameBorder=0></iframe>
 
 Analysis: Based on our hypothesis tests, it seems likely that the median duration of time for which there is an outage is lesser than the overall median outage duration on Mondays and Tuesdays. On the other hand, on Saturdays, the median outage duration is likely longer than the population median. This could potentially mean that restoration teams in the US work faster than the median speed of work to resolve power outages on Mondays and Tuesdays, and the same teams likely work slower on Saturdays.
 
@@ -246,7 +266,7 @@ Observed Difference = 1035.0 <br>
 P-value = 0.0 <br>
 Significance level (alpha) = 5% <br>
 
-[PLOT HERE]
+<iframe src="Plots/hypplot2.html" width=800 height=600 frameBorder=0></iframe>
 
 Conclusion: Based on the plot and our P-value of 0.0, at a significance level of 5%, we can reject the null hypothesis in favor of the alternative hypothesis. The median duration of outages over the weekend does seem to be greater than the median duration of outages over the weekdays. And this makes sense because it is likely that restoration teams either don't work at all on weekends (delaying the restoration by days) or they just don't work as much on weekends as they do on weekends.
 
