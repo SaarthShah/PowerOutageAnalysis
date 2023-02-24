@@ -39,6 +39,8 @@ Our next step was to clean the dataset in order to make the rows and columns usa
 
 ## Assessment of Missingness
 
+### NMAR Analysis
+The OUTAGE.RESTORATION column, which is an aggregation of the OUTAGE.RESTORATION.DATE and OUTAGE.RESTORATION.TIME columns from the original dataset, is potentially NMAR, or not missing at random. The OUTAGE.RESTORATION column contains information about when the power was restored and the outage, resolved. It is possible that this column has missing values because the record-keeper for the power outage data may have been sick or on leave on the day of the restoration. This could make the column NMAR and not MCAR because the OUTAGE.RESTORATION column would not be random and, additionally, also be dependent on an external variable, i.e., the presence of the record-keeper for the power outages. If we had data on the presence of the record-keeper on the day of restoration, then we would be able to conclude the variable OUTAGE.RESTORATION as MAR (Missing at random).
 
 ## Hypothesis Testing
 
