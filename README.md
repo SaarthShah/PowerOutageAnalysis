@@ -59,10 +59,21 @@ After thoroughly cleaning the dataset, here's a preview of our cleaned dataframe
 |     5 |   2015 |       7 | Minnesota    | MN            | MRO           | East North Central |             1.2 | warm               | severe weather     | nan                     |               nan |              1740 |              250 |               250000 |       13.07 |       10.16 |        7.74 |         10.43 | 2.02888e+06 | 2.16161e+06 | 1.77794e+06 |   5.97034e+06 |      33.9826 |      36.2059 |      29.7795 |         2374674 |          289044 |            9812 |           2673531 |        88.8216 |        10.8113 |       0.367005 |              54431 |            49844 |          1.09203 |                 1.7 |           4873 |          292023 |       1.6687  |             2.2 |      5489594 |          73.27 |       15.28 |           2279 |      1700.5 |           18.2 |            2.14 |          0.6 |    91.5927 |         8.40733 |            5.47874 | 2015-07-18 02:00:00 | 2015-07-19 07:00:00  |             5 |          7200 |
 
 ### Univariate Analysis
+
+**Distribution of Power Outage Durations**
+
 <iframe src="Plots/univplot1.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="Plots/univplot2.html" width=800 height=600 frameBorder=0></iframe>
 
+These two plots help us understand the distribution of the how long these power outages last. In plot 1, we broke down the duration in minutes into 10 different bins. Plot 2, does something similar where the duration is in number of days. Looking at these two plots we can infer that most of the power outages that occured lasted less than 1 day and most of them resolving before 5 days. However there are some outlier cases where these outages lasted upto 30 days.
 
+**Distribution of Power Outages per Year**
 
+<iframe src="Plots/uniplot3.html" width=800 height=600 frameBorder=0></iframe>
+
+While the dataset tells us that the power outages are between 2010 and 2016, it is still important to know the distribution of these outages per year to get a better idea of our dataset before any analysis. Looking at the chart above we can see that in our dataset, the mass of the power outages (68%) we have collected information about happened between 2008 and 2015, with the maximum number of outages (269) recorded in 2011.
+
+**Note**: We do not know if our dataset contains **all** the outages that happened between 2000 and 2016, so our statement is only helpful for us to understand our sample and not the entire population.
 
 
 ## **Assessment of Missingness**
