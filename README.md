@@ -23,7 +23,7 @@ For this study, we will focus on answering the following question:
 
 ## **Cleaning and EDA**
 
-### Data Cleaning
+### **Data Cleaning**
 
 Our data for this study is provided in an excel sheet that has certain useless columns that we can avoid during our analysis.
 ![Excel Sheet Preview](https://i.imgur.com/79yPXtg.png)
@@ -58,7 +58,7 @@ After thoroughly cleaning the dataset, here's a preview of our cleaned dataframe
 |     4 |   2012 |       6 | Minnesota    | MN            | MRO           | East North Central |            -0.1 | normal             | severe weather     | thunderstorm            |               nan |              2550 |              nan |                68200 |       11.79 |        9.25 |        6.71 |          9.19 | 1.85152e+06 | 1.94117e+06 | 1.99303e+06 |   5.78706e+06 |      31.9941 |      33.5433 |      34.4393 |         2317336 |          278466 |           11010 |           2606813 |        88.8954 |        10.6822 |       0.422355 |              51598 |            48156 |          1.07148 |                 0.6 |           5364 |          277627 |       1.93209 |             2.2 |      5380443 |          73.27 |       15.28 |           2279 |      1700.5 |           18.2 |            2.14 |          0.6 |    91.5927 |         8.40733 |            5.47874 | 2012-06-19 04:30:00 | 2012-06-20 23:00:00  |             1 |         16200 |
 |     5 |   2015 |       7 | Minnesota    | MN            | MRO           | East North Central |             1.2 | warm               | severe weather     | nan                     |               nan |              1740 |              250 |               250000 |       13.07 |       10.16 |        7.74 |         10.43 | 2.02888e+06 | 2.16161e+06 | 1.77794e+06 |   5.97034e+06 |      33.9826 |      36.2059 |      29.7795 |         2374674 |          289044 |            9812 |           2673531 |        88.8216 |        10.8113 |       0.367005 |              54431 |            49844 |          1.09203 |                 1.7 |           4873 |          292023 |       1.6687  |             2.2 |      5489594 |          73.27 |       15.28 |           2279 |      1700.5 |           18.2 |            2.14 |          0.6 |    91.5927 |         8.40733 |            5.47874 | 2015-07-18 02:00:00 | 2015-07-19 07:00:00  |             5 |          7200 |
 
-### Univariate Analysis
+### **Univariate Analysis**
 
 **Distribution of Power Outage Durations**
 
@@ -76,13 +76,13 @@ While the dataset tells us that the power outages are between 2010 and 2016, it 
 **Note**: We do not know if our dataset contains **all** the outages that happened between 2000 and 2016, so our statement is only helpful for us to understand our sample and not the entire population.
 
 
-### Bivariate Analysis
+### **Bivariate Analysis**
 
 **Outage Duration Distributiom by U.S. States**
 
 <iframe src="Plots/bivarplot1.html" width=800 height=1200 frameBorder=0></iframe>
 
-Above is a histogram plot of OUTAGE.DURATION by U.S. States in order to study the shapes of the distributions. The y-axis contains the duration in minutes. The conditional distributions above tell us that most of the U.S. States have a similarly right-skewed distribution as the overall OUTAGE.DURATION distribution. This means that there is no single state amongst those with more than 1 power outage in which the outage durations are not right skewed by large outlier values.
+Above is a histogram plot of `OUTAGE.DURATION` by U.S. States in order to study the shapes of the distributions. The y-axis contains the duration in minutes. The conditional distributions above tell us that most of the U.S. States have a similarly right-skewed distribution as the overall `OUTAGE.DURATION` distribution. This means that there is no single state amongst those with more than 1 power outage in which the outage durations are not right skewed by large outlier values.
 
 **Outage Duration versus Customers Affected**
 
@@ -94,6 +94,62 @@ Based on the plot above, there seems to be a line of fit but the points seem to 
 
 Based on the correlation coefficient of 0.26, there appears to be a positive correlation between the number of customers affected and the outage duration. However, this strength of the correlation is considered to be moderate, meaning that the relationship between the variables is not particularly strong. Based on this, we can only say that the two variables may have a positive correlation but the trend is not strong enough to come to a conclusion.
 
+### **Interesting Aggregates**
+
+| U.S._STATE           |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
+|:---------------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
+| Alabama              |               nan   |                   nan   |                 77   |       nan   |           nan   |           1016.5 |                           nan   |
+| Arizona              |                67.5 |                   nan   |                180   |       nan   |           nan   |          26760   |                           384.5 |
+| Arkansas             |               105   |                   nan   |                175   |         3   |           300   |           1213.5 |                           nan   |
+| California           |               269   |                   882.5 |                117   |       128.5 |           420   |            962   |                           199   |
+| Colorado             |               nan   |                   nan   |                105   |         2   |           nan   |           2425   |                           337.5 |
+| Connecticut          |               nan   |                   nan   |                  1   |       nan   |           nan   |           2040   |                           nan   |
+| Delaware             |                50   |                   nan   |                  1   |       nan   |           nan   |           2153.5 |                           nan   |
+| District of Columbia |               159   |                   nan   |                nan   |       nan   |           nan   |           2425   |                           nan   |
+| Florida              |               308.5 |                   nan   |                 50   |       nan   |          4320   |           4335.5 |                           121.5 |
+| Georgia              |               nan   |                   nan   |                108   |       nan   |           nan   |           1416   |                           nan   |
+| Hawaii               |               nan   |                   nan   |                nan   |       nan   |           nan   |            955   |                           237   |
+| Idaho                |               nan   |                   nan   |                180   |       nan   |          1548   |            nan   |                           220   |
+| Illinois             |               149   |                  2761   |               1450   |       nan   |           120   |           1200   |                           nan   |
+| Indiana              |                 1   |                 12240   |                 49.5 |        96   |           nan   |           3022   |                            65   |
+| Iowa                 |               nan   |                   nan   |               2161   |       nan   |           nan   |           1044   |                           nan   |
+| Kansas               |               nan   |                   nan   |                187   |       nan   |           913   |          13650   |                           nan   |
+| Kentucky             |               652   |                 12570   |                108   |       nan   |           nan   |           1680   |                           nan   |
+| Louisiana            |               227   |                 28170   |                nan   |       nan   |           533.5 |           3063.5 |                           576   |
+| Maine                |               nan   |                  1676   |                  0.5 |       881   |           nan   |           1112   |                           nan   |
+| Maryland             |               nan   |                   nan   |                  1   |       nan   |           nan   |           3050   |                           304   |
+| Massachusetts        |               nan   |                  2891   |                 64.5 |       nan   |           nan   |            480   |                            67   |
+| Michigan             |               761   |                   nan   |               1408   |         1   |          1078   |           4259   |                          2694   |
+| Minnesota            |               nan   |                   nan   |                 78   |       nan   |           nan   |           3000   |                           nan   |
+| Mississippi          |               nan   |                   nan   |                  5   |       nan   |           nan   |            nan   |                           300   |
+| Missouri             |               nan   |                   nan   |                 25   |       nan   |           nan   |           2880   |                            65   |
+| Montana              |               nan   |                   nan   |                 93   |        34.5 |           nan   |            nan   |                           nan   |
+| Nebraska             |               nan   |                   nan   |                nan   |       nan   |           159   |             60   |                           nan   |
+| Nevada               |               nan   |                   nan   |                108   |       nan   |           nan   |            nan   |                           nan   |
+| New Hampshire        |               nan   |                   nan   |                 53   |       nan   |           nan   |           1597.5 |                           nan   |
+| New Jersey           |               nan   |                   nan   |                  0   |       nan   |           nan   |           5115   |                           748.5 |
+| New Mexico           |               nan   |                    76   |                126.5 |       nan   |           nan   |            nan   |                             0   |
+| New York             |               247   |                 15855   |                 17.5 |       nan   |          2760   |           4710   |                           191   |
+| North Carolina       |               nan   |                   nan   |                484   |       nan   |           nan   |           1336.5 |                            45   |
+| North Dakota         |               nan   |                   nan   |                nan   |       nan   |           720   |            nan   |                           nan   |
+| Ohio                 |               nan   |                   nan   |                 41   |       nan   |           nan   |           3660   |                          1744.5 |
+| Oklahoma             |               nan   |                   nan   |                110   |       984   |           431   |           2895   |                           nan   |
+| Oregon               |               200   |                   nan   |                 73   |       nan   |           nan   |           1526   |                           nan   |
+| Pennsylvania         |               376   |                   nan   |                903   |       nan   |           nan   |           3059   |                           329   |
+| South Carolina       |               nan   |                   nan   |                nan   |       nan   |           nan   |           2947.5 |                           nan   |
+| South Dakota         |               nan   |                   nan   |                nan   |       120   |           nan   |            nan   |                           nan   |
+| Tennessee            |               404   |                   nan   |                 48   |       nan   |          2700   |            750   |                            20   |
+| Texas                |               318   |                 20160   |                 74   |       nan   |           330   |           1725   |                           322   |
+| Utah                 |                15   |                   nan   |                 15   |       nan   |          2275   |            957   |                           537.5 |
+| Vermont              |               nan   |                   nan   |                 15   |       nan   |           nan   |            nan   |                           nan   |
+| Virginia             |               nan   |                   nan   |                  2   |       nan   |           683.5 |            597   |                           241   |
+| Washington           |              1204   |                     1   |                 98.5 |        21   |           248   |           3896   |                            25   |
+| West Virginia        |               nan   |                   nan   |                  1   |       nan   |           nan   |           9576   |                           nan   |
+| Wisconsin            |               nan   |                 13564   |                 90   |       nan   |           388   |            960   |                           nan   |
+| Wyoming              |                61   |                   nan   |                  0   |        32   |           nan   |            106   |                           nan   |
+
+Above is the pivot table which showcases the median outage duration for the combination of states and outage causes. Looking at the results, we can see that some states like California & Illinois when paired with certain `OUTAGE.CAUSE` have higher outage durations than other states like Montana and Nebraska. Therefore, there might be some correlation between the state and outage cause on the outage duration. This is tested further in our Hypothesis test.
+
 ## **Assessment of Missingness**
 
 ### NMAR Analysis
@@ -102,16 +158,16 @@ The OUTAGE.RESTORATION column, which is an aggregation of the OUTAGE.RESTORATION
 ### Missingness Dependency
 
 #### Why TVD for checking Missingness?
-TVD (Total Variation Distance) is a test statistic that is used to compare categorical distributions of a specific variable. For missingness, when we split our data into two sets based on whether data in a certain column is missing, we look at the categorical distributions of the other columns to see if there is any significant difference. For instance, below, we explore the missingness of CUSTOMERS.AFFECTED in relation to the columns CLIMATE.CATEGORY and U.S._STATES. Both these columns are used to classify data and, hence, are categorical. For this reason, we used TVD as our test statistic in our missingness analysis.
+TVD (Total Variation Distance) is a test statistic that is used to compare categorical distributions of a specific variable. For missingness, when we split our data into two sets based on whether data in a certain column is missing, we look at the categorical distributions of the other columns to see if there is any significant difference. For instance, below, we explore the missingness of `CUSTOMERS.AFFECTED` in relation to the columns CLIMATE.CATEGORY and U.S._STATES. Both these columns are used to classify data and, hence, are categorical. For this reason, we used TVD as our test statistic in our missingness analysis.
 
 #### Identifying a column with potentially MAR data
 Our column for CUSTOMERS.AFFECTED seems to be missing some values. However, this column does not seem to be missing values due to Design (MD) and contains both extremely large and small values (0 to 3241437 people). In this section, we tested whether the missingness of customers affected depends on another column or not.
 
 ####  CLIMATE.CATEGORY column
-First let's test if the missingess of the CUSTOMERS.AFFECTED value depends on the climate of the place where the power outage was recorded. For this, we will first draw a simple plot to check if there is a visual difference between the null and non-null distribution values of CLIMATE.CATEGORY
+First let's test if the missingess of the `CUSTOMERS.AFFECTED` value depends on the climate of the place where the power outage was recorded. For this, we will first draw a simple plot to check if there is a visual difference between the null and non-null distribution values of CLIMATE.CATEGORY
 [PLOT HERE]
 
-In this chart, the distribution between the null and non-null values seem to be fairly similar. We can further investigate by conducting a permuation test to check if this difference in distribution was purely due to chance or if the CLIMATE.CATEGORY has a correlation with the missingnes of CUSTOMERS.AFFECTED.
+In this chart, the distribution between the null and non-null values seem to be fairly similar. We can further investigate by conducting a permuation test to check if this difference in distribution was purely due to chance or if the CLIMATE.CATEGORY has a correlation with the missingnes of `CUSTOMERS.AFFECTED`.
 
 **Permutation Test Results:**
 
@@ -120,15 +176,15 @@ P-value = 0.592
 Signficance level (alpha) = 5%
 [PLOT HERE]
 
-Our p-value of 0.592 is much bigger than our significance interval of 5%, therefore we do not have enough evidence to reject the null hypothesis. Based on this we cannot conclude that the missingness of the CUSTOMERS.AFFECTED values depends on the CLIMATE.CATEGORY column.
+Our p-value of 0.592 is much bigger than our significance interval of 5%, therefore we do not have enough evidence to reject the null hypothesis. Based on this we cannot conclude that the missingness of the `CUSTOMERS.AFFECTED` values depends on the CLIMATE.CATEGORY column.
 
-Therefore we cannot say that missingness of the CUSTOMERS.AFFECTED values is Missing at Random due to its correlation with the CLIMATE.CATEGORY column.
+Therefore we cannot say that missingness of the `CUSTOMERS.AFFECTED` values is Missing at Random due to its correlation with the CLIMATE.CATEGORY column.
 
 #### U.S._STATES column
-Now, let's test if the missingess of the CUSTOMERS.AFFECTED value depends on the US State where the power outage was recorded. For this, we will first draw a simple plot to check if there is a visual difference between the null and non-null distribution values of U.S._STATE.
+Now, let's test if the missingess of the `CUSTOMERS.AFFECTED` value depends on the US State where the power outage was recorded. For this, we will first draw a simple plot to check if there is a visual difference between the null and non-null distribution values of U.S._STATE.
 [PLOT HERE]
 
-There seems to be a significant difference in values in the null and non-null distributions of the CUSTOMERS.AFFECTED values. We can further investigate by conducting a permuation test to check if this difference in distribution was purely due to chance or if the CLIMATE.CATEGORY has a correlation with the missingnes of U.S._STATES.
+There seems to be a significant difference in values in the null and non-null distributions of the `CUSTOMERS.AFFECTED` values. We can further investigate by conducting a permuation test to check if this difference in distribution was purely due to chance or if the CLIMATE.CATEGORY has a correlation with the missingnes of U.S._STATES.
 
 **Permutation Test Results:**
 
