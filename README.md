@@ -1,4 +1,4 @@
-## Analyzing Power Outages
+Analyzing Power Outages
 
 ## **Introduction**
 
