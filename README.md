@@ -17,11 +17,16 @@ Some of the relevant columns that the dataset entails contains information about
 
 Our goal while exploring this dataset is to better understand the factors that may be affecting how long these power outages last. As this dataset contains information about a lot of major power outages, it can provide us with a substantial amount of relative insight about what factors influence the likeliness and duration of these outages. These results can then be distributed to the relevant authorities in order to take precautionary steps to prevent futher events from happening alongside shortening the impact and duration. In the ever rising digital world, such insights have the potnetial to significantly impact the quality of life of US citizens by ensuring that they have constant access to power.
 
+For this study, we will focus on:
 
-
-
+**Do power outages have a specific pattern? Do charactersitics like day of the week, time of the day, regions, electricity price, and outage causes have a correlation with the duration of the power outage**
 
 ## Cleaning and EDA
+
+### Data Cleaning
+
+Our data for this study is provided in an excel sheet that has certain useless columns that we can avoid during our analysis.
+![Excel Sheet Preview]('https://i.imgur.com/79yPXtg.png')
 
 
 ## Assessment of Missingness
