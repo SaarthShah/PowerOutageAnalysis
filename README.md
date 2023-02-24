@@ -44,13 +44,13 @@ The OUTAGE.RESTORATION column, which is an aggregation of the OUTAGE.RESTORATION
 
 ### Missingness Dependency
 
-#### <u>Why TVD for checking Missingness?</u>
+#### Why TVD for checking Missingness?
 TVD (Total Variation Distance) is a test statistic that is used to compare categorical distributions of a specific variable. For missingness, when we split our data into two sets based on whether data in a certain column is missing, we look at the categorical distributions of the other columns to see if there is any significant difference. For instance, below, we explore the missingness of CUSTOMERS.AFFECTED in relation to the columns CLIMATE.CATEGORY and U.S._STATES. Both these columns are used to classify data and, hence, are categorical. For this reason, we used TVD as our test statistic in our missingness analysis.
 
-#### <u>Identifying a column with potentially MAR data</u>
+#### Identifying a column with potentially MAR data
 Our column for CUSTOMERS.AFFECTED seems to be missing some values. However, this column does not seem to be missing values due to Design (MD) and contains both extremely large and small values (0 to 3241437 people). In this section, we tested whether the missingness of customers affected depends on another column or not.
 
-####  <u>CLIMATE.CATEGORY column</u>
+####  CLIMATE.CATEGORY column
 First let's test if the missingess of the CUSTOMERS.AFFECTED value depends on the climate of the place where the power outage was recorded. For this, we will first draw a simple plot to check if there is a visual difference between the null and non-null distribution values of CLIMATE.CATEGORY
 [PLOT HERE]
 
