@@ -28,13 +28,28 @@ For this study, we will focus on answering the following question:
 Our data for this study is provided in an excel sheet that has certain useless columns that we can avoid during our analysis.
 ![Excel Sheet Preview](https://i.imgur.com/79yPXtg.png)
 
-Before beginning the data cleaning, we first had to read the data properly by ensuring that pandas does not read these specific columns.
+Before beginning the data cleaning, we first had to read the data properly by ensuring that pandas does not read these specific columns using the following code:
 
-`pd.read_excel('outage.xlsx',skiprows=[0,1,2,3,4,6]).drop(columns=['variables']` is the code that would allow us to drop these specific rows and columns.
+`pd.read_excel('outage.xlsx',skiprows=[0,1,2,3,4,6]).drop(columns=['variables']`
 
 Our next step was to clean the dataset in order to make the rows and columns usable for our study. Here are some of the steps we took to properly clean the dataset:
 
-1.  
+1. The power outage start date and time is given by 'OUTAGE.START.DATE' and 'OUTAGE.START.TIME' which are two seperate columns. Aggregating the dates and times into a singular datetime object would allow us to quickly look into when the outages are starting with an exact time, without having to look into two seperate columns.
+
+2. The power outage restoration date and time is given by 'OUTAGE.RESTORATION.DATE' and 'OUTAGE.RESTORATION.TIME' which are two seperate columns. Aggregating the dates and times into a singular datetime object would allow us to quickly look into when the outages where resolved with an exact time, without having to look into two seperate columns.
+
+3. As our study emphasizes on the correlations between the duration of the power outage and other columns, it would make sense for us to drop any datapoints where we do not have a reported power outage duration. Thereby dropping all columns where the duration of the power outage is null.
+
+4. Additionally, we would also be factoring in the time of the day when this power outage occured by converting the time into seconds for us to easily analyze the numerical values.
+
+5. For one of our tests we would be find correlations between day of the week and power outage duration. We can quickly extract these values from the pandas date time object.
+
+While cleaning we also checked how many null values are there for the 'prices' for electricity with the hopes of getting insight into what columns we can drop if we decide to run any tests with the electricity prices.
+
+![Negative and Null Electricity Prices](https://i.ibb.co/cJzYGvF/Screenshot-at-Feb-23-17-24-47.png)
+
+After thoroughly cleaning the dataset, here's a preview of our cleaned dataframe for power outages:
+
 
 
 ## Assessment of Missingness
