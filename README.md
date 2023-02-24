@@ -76,6 +76,14 @@ While the dataset tells us that the power outages are between 2010 and 2016, it 
 **Note**: We do not know if our dataset contains **all** the outages that happened between 2000 and 2016, so our statement is only helpful for us to understand our sample and not the entire population.
 
 
+### Bivariate Analysis
+
+**Outage Duration Distributiom by U.S. States**
+
+<iframe src="Plots/bivarplot1.html" width=800 height=2400 frameBorder=0></iframe>
+
+Above is a histogram plot of OUTAGE.DURATION by U.S. States in order to study the shapes of the distributions. The conditional distributions above tell us that most of the U.S. States have a similarly right-skewed distribution as the overall OUTAGE.DURATION distribution. This means that there is no single state amongst those with more than 1 power outage in which the outage durations are not right skewed by large outlier values.
+
 ## **Assessment of Missingness**
 
 ### NMAR Analysis
