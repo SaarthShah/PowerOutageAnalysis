@@ -158,13 +158,13 @@ The `OUTAGE.RESTORATION` column, which is an aggregation of the `OUTAGE.RESTORAT
 
 ### **Missingness Dependency**
 
-#### Why TVD for checking Missingness?
+#### 1. Why TVD for checking Missingness?
 **TVD (Total Variation Distance)** is a test statistic that is used to compare categorical distributions of a specific variable. For missingness, when we split our data into two sets based on whether data in a certain column is missing, we look at the categorical distributions of the other columns to see if there is any significant difference. For instance, below, we explore the missingness of `CUSTOMERS.AFFECTED` in relation to the columns `CLIMATE.CATEGORY` and `U.S._STATES`. Both these columns are used to classify data and, hence, are categorical. For this reason, we used TVD as our test statistic in our missingness analysis.
 
-#### Identifying a column with potentially MAR data
+#### 2. Identifying a column with potentially MAR data
 Our column for `CUSTOMERS.AFFECTED` seems to be missing some values. However, this column does not seem to be missing values due to Design (MD) and contains both extremely large and small values (0 to 3241437 people). In this section, we test whether the missingness of customers affected depends on another column or not.
 
-####  `CLIMATE.CATEGORY` column
+#### **- `CLIMATE.CATEGORY` column **
 
 First let's test if the missingess of the `CUSTOMERS.AFFECTED` value depends on the climate of the place where the power outage was recorded. For this, we will first draw a simple plot to check if there is a visual difference between the null and non-null distribution values of `CLIMATE.CATEGORY`
 
@@ -174,9 +174,9 @@ In this chart, the distribution between the null and non-null values seem to be 
 
 **Permutation Test Results:**
 
-Observed TVD = 0.03
-P-value = 0.592
-Signficance level (alpha) = 5%
+Observed TVD = 0.03 <br>
+P-value = 0.592 <br>
+Signficance level (alpha) = 5% <br>
 
 <iframe src="Plots/permplot2.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -184,7 +184,7 @@ Our p-value of 0.592 is much bigger than our significance interval of 5%, theref
 
 Therefore we **cannot say** that missingness of the `CUSTOMERS.AFFECTED` values is **Missing at Random** due to its correlation with the `CLIMATE.CATEGORY` column.
 
-#### U.S._STATES column
+#### **- `U.S._STATES` column **
 Now, let's test if the missingess of the `CUSTOMERS.AFFECTED` value depends on the US State where the power outage was recorded. For this, we will first draw a simple plot to check if there is a visual difference between the null and non-null distribution values of `U.S._STATE`.
 
 <iframe src="Plots/permplot3.html" width=800 height=600 frameBorder=0></iframe>
@@ -193,9 +193,9 @@ There seems to be a significant difference in values in the null and non-null di
 
 **Permutation Test Results:**
 
-Observed TVD = 0.37
-P-value = 0.0
-Signficance level (alpha) = 5%
+Observed TVD = 0.37 <br>
+P-value = 0.0 <br>
+Signficance level (alpha) = 5% <br>
 
 <iframe src="Plots/permplot4.html" width=800 height=600 frameBorder=0></iframe>
 
