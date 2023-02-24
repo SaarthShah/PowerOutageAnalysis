@@ -26,7 +26,7 @@ For this study, we will focus on:
 ### Data Cleaning
 
 Our data for this study is provided in an excel sheet that has certain useless columns that we can avoid during our analysis.
-![Excel Sheet Preview]('https://i.imgur.com/79yPXtg.png')
+![Excel Sheet Preview](https://i.imgur.com/79yPXtg.png)
 
 
 ## Assessment of Missingness
