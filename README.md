@@ -19,7 +19,7 @@ Our goal while exploring this dataset is to better understand the factors that m
 
 For this study, we will focus on answering the following question:
 
-**Do power outages have a specific pattern? Do charactersitics like day of the week, time of the day, regions, electricity price, and outage causes have a correlation with the duration of the power outage**
+`Do power outages have a specific pattern? Do charactersitics like day of the week, time of the day, regions, electricity price, and outage causes have a correlation with the duration of the power outage`
 
 ## **Cleaning and EDA**
 
