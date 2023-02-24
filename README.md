@@ -1,3 +1,5 @@
+## Analyzing Power Outages
+
 ## **Introduction**
 
 In this study we will be exploring the [Power Outage Dataset](https://dsc80.com/project3/power-outages). This dataset contains datapoints for the major power outage data in the continental U.S. from January 2000 to July 2016. Overall this dataset contains 1534 power outage events that happened in the United States.
