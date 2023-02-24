@@ -39,19 +39,25 @@ Our next step was to clean the dataset in order to make the rows and columns usa
 
 ## Assessment of Missingness
 
-### NMAR Analysis
+<b>NMAR Analysis<b>
 The OUTAGE.RESTORATION column, which is an aggregation of the OUTAGE.RESTORATION.DATE and OUTAGE.RESTORATION.TIME columns from the original dataset, is potentially NMAR, or not missing at random. The OUTAGE.RESTORATION column contains information about when the power was restored and the outage, resolved. It is possible that this column has missing values because the record-keeper for the power outage data may have been sick or on leave on the day of the restoration. This could make the column NMAR and not MCAR because the OUTAGE.RESTORATION column would not be random and, additionally, also be dependent on an external variable, i.e., the presence of the record-keeper for the power outages. If we had data on the presence of the record-keeper on the day of restoration, then we would be able to conclude the variable OUTAGE.RESTORATION as MAR (Missing at random).
 
-#### Identifying a column with potentially MAR data
+### Missingness Dependency
+
+<b>Why TVD for checking Missingness?<b>
+TVD (Total Variation Distance) is a test statistic that is used to compare categorical distributions of a specific variable. For missingness, when we split our data into two sets based on whether data in a certain column is missing, we look at the categorical distributions of the other columns to see if there is any significant difference. For instance, below, we explore the missingness of CUSTOMERS.AFFECTED in relation to the columns CLIMATE.CATEGORY and U.S._STATES. Both these columns are used to classify data and, hence, are categorical. For this reason, we used TVD as our test statistic in our missingness analysis.
+
+<b>Identifying a column with potentially MAR data<b>
 Our column for CUSTOMERS.AFFECTED seems to be missing some values. However, this column does not seem to be missing values due to Design (MD) and contains both extremely large and small values (0 to 3241437 people). In this section, we tested whether the missingness of customers affected depends on another column or not.
 
-#### CLIMATE.CATEGORY column
+<b>CLIMATE.CATEGORY column<b>
 First let's test if the missingess of the CUSTOMERS.AFFECTED value depends on the climate of the place where the power outage was recorded. For this, we will first draw a simple plot to check if there is a visual difference between the null and non-null distribution values of CLIMATE.CATEGORY
 [PLOT HERE]
 
 In this chart, the distribution between the null and non-null values seem to be fairly similar. We can further investigate by conducting a permuation test to check if this difference in distribution was purely due to chance or if the CLIMATE.CATEGORY has a correlation with the missingnes of CUSTOMERS.AFFECTED.
 
-##### Results:
+<u>Results:<u>
+
 Observed TVD = 0.03
 P-value = 0.592
 Signficance level (alpha) = 5%
