@@ -67,6 +67,21 @@ Our p-value of 0.592 is much bigger than our significance interval of 5%, theref
 
 Therefore we cannot say that missingness of the CUSTOMERS.AFFECTED values is Missing at Random due to its correlation with the CLIMATE.CATEGORY column.
 
+### U.S._STATES column
+Now, let's test if the missingess of the CUSTOMERS.AFFECTED value depends on the US State where the power outage was recorded. For this, we will first draw a simple plot to check if there is a visual difference between the null and non-null distribution values of U.S._STATE.
+[PLOT HERE]
+
+There seems to be a significant difference in values in the null and non-null distributions of the CUSTOMERS.AFFECTED values. We can further investigate by conducting a permuation test to check if this difference in distribution was purely due to chance or if the CLIMATE.CATEGORY has a correlation with the missingnes of U.S._STATES.
+
+**Results:**
+
+Observed TVD = 0.37
+P-value = 0.0
+Signficance level (alpha) = 5%
+[PLOT HERE]
+
+As the p-value is 0 which is less than our 5% confidence level, we have sufficient evidence to reject the null hypothesis and state that the missingness of the CUSTOMERS AFFECTED column is <b>MAR</b> by The U.S._STATE column.
+
 ## Hypothesis Testing
 
 
