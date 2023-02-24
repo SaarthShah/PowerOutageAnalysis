@@ -166,7 +166,7 @@ The `OUTAGE.RESTORATION` column, which is an aggregation of the `OUTAGE.RESTORAT
 #### 2. Identifying a column with potentially MAR data
 Our column for `CUSTOMERS.AFFECTED` seems to be missing some values. However, this column does not seem to be missing values due to Design (MD) and contains both extremely large and small values (0 to 3241437 people). In this section, we test whether the missingness of customers affected depends on another column or not.
 
-- **`CLIMATE.CATEGORY` column**
+- **`CLIMATE.CATEGORY` column**<br>
 
 First let's test if the missingess of the `CUSTOMERS.AFFECTED` value depends on the climate of the place where the power outage was recorded. For this, we will first draw a simple plot to check if there is a visual difference between the null and non-null distribution values of `CLIMATE.CATEGORY`
 
@@ -186,7 +186,8 @@ Our p-value of 0.592 is much bigger than our significance interval of 5%, theref
 
 Therefore we **cannot say** that missingness of the `CUSTOMERS.AFFECTED` values is **Missing at Random** due to its correlation with the `CLIMATE.CATEGORY` column.
 
-- **`U.S._STATES` column**
+- **`U.S._STATES` column** <br>
+
 Now, let's test if the missingess of the `CUSTOMERS.AFFECTED` value depends on the US State where the power outage was recorded. For this, we will first draw a simple plot to check if there is a visual difference between the null and non-null distribution values of `U.S._STATE`.
 
 <iframe src="Plots/permplot3.html" width=800 height=600 frameBorder=0></iframe>
