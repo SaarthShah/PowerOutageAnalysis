@@ -1,5 +1,3 @@
-# Power Outage Analysis
-
 ## Introduction
 
 
