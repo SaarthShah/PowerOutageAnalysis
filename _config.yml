@@ -1,6 +1,6 @@
 theme: minima
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
-title: Saarth Shah and Saathvik Dirisala
+title: Analyzing Power Outages in United States
 description: > # this means to ignore newlines until "baseurl:"
   Built for DSC 80 @ UCSD.

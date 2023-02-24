@@ -1,4 +1,4 @@
-Analyzing Power Outages
+Report by Saarth Shah and Saathvik Dirisala
 
 ## **Introduction**
 
